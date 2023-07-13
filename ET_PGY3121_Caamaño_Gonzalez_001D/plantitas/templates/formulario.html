@@ -1,0 +1,71 @@
+{% extends "base.html"%}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario </title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/stylos.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
+    <script src="{% static 'js/funciones.js' %}"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" 
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" 
+    crossorigin="anonymous">
+     
+
+</head>
+<body>
+     
+    
+    <div class="container mt-5 mb-5">
+        <form id="mi-formulario" method="post">
+            <div class="form-group">
+                <label for="nom">Nombre de Usuario: </label>
+                <input type="text" id="nom" name="nom" required
+                    minlength="3" placeholder="Nombre Completo"
+                    class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="correo">Correo de Usuario: </label>
+                <input type="text" id="correo" name="correo" required
+                    placeholder="Dirección Email" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="fono">Teléfono de Usuario: </label>
+                <input type="number" id="fono" name="fono" required
+                    minlength="9"  class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="fecha">Fecha de Nacimiento: </label>
+                <input type="date" id="fecha" name="fecha" required
+                    min="1950-01-01" class="form-control">
+            </div>
+            
+           
+
+            <div class="form-group">
+                <input type="submit" value="Enviar" id="enviar" 
+                    class="btn btn-success">
+                    <input type="button" value="Check" class="btn btn-warning"
+                    onclick="Checkinfo()">
+            </div>
+
+            
+        </form>
+    </div>
+  
+
+    
+    
+    
+
+
+</body>
+</html>
+{% endblock %}

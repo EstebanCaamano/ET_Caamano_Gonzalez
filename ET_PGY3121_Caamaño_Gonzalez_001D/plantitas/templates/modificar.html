@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Plantas</title>
+    {% load static %}
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/stylos.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+  
+    <script>
+       $(function(){
+            $("#formulario").validate({ 
+                rules:{
+                    id:"required",
+                    nombre: "required",
+                    precio: "required",
+                    imagen: "required",
+                    categoria:"required",
+                    
+                },
+                messages:{
+                    id:{
+                        required: 'Ingresar nueva id',
+                    },
+                    nombre:{
+                        required: 'Ingresar nuevo nombre',
+                    },
+                    precio:{
+                        required: 'Ingresar nuevo precio',
+                    },
+                    imagen:{
+                        required: 'Ingresar nueva imagen',
+                    },
+                    categoria:{
+                        required: 'Ingresar nuevo precio',
+                    }
+                }
+            })
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Modificar Producto</h2>
+
+        <form method="POST" id="formulario"enctype="multipart/form-data" > 
+            {% csrf_token %}
+            <div class="row">
+                <label for="{{ form.id.name }}"> 
+                    {{ form.id.label }}
+                </label>
+                {{ form.id }}
+            </div>
+
+            <div class="row">
+                <label for="{{ form.nombre.name }}"> 
+                    {{ form.nombre.label }}
+                </label>
+                {{ form.nombre }}
+            </div>
+
+            <div class="row">
+                <label for="{{ form.precio.name }}"> 
+                    {{ form.precio.label }}
+                </label>
+                {{ form.precio }}
+            </div>
+            <div class="row">
+                <label for="{{ form.imagen.name }}"> 
+                    {{ form.imagen.label }}
+                </label>
+                <img src="{{ form.instance.imagen.url }}" alt="Imagen actual" width="200">
+                {{ form.imagen }}
+            </div>
+
+            <div class="row">
+                <label for="{{ form.categoria.name }}"> 
+                    {{ form.categoria.label}}
+                </label>
+                {{ form.categoria }}
+            </div>
+            <div class="row">
+                <label for="{{ form.stock.name }}"> 
+                    {{ form.stock.label}}
+                </label>
+                {{ form.stock }}
+            </div>
+            <br><br>
+
+            <div class="row">
+                <div class="col-md">
+                    <input type="submit" class="btn btn-primary" value="Modificar">
+                    <a href="{% url 'pagina3' %}" class="btn btn-success">volver</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+{% extends "base.html"%}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="icon" href="{% static 'img/icono.png' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/stylos.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" 
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>Nosotros</title>
+</head>
+<body>
+    
+    
+    <div class="container-fluid px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center " >
+            <div class="col-md-5" >
+                <h1 class="nosotros-titulos">Misión</h1>
+                    <p class="nosotros-texto">Nuestra organización se enfoca en proporcionar productos para jardinería de alta calidad y al mismo tiempo apoyar a una fundación sin fines de lucro.</p>
+            </div>
+            <div class="col-md-5 ">
+                <h1 class="nosotros-titulos">Visión</h1>
+                    <p class="nosotros-texto">Ser la mejor opción de compra para los amantes de la jardinería, al mismo tiempo que contribuimos al desarrollo de proyectos sociales de la fundación.</p>
+            </div>
+
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-5 ">
+                <div class="video-contenedor">
+                    <iframe class="video" width="560" height="315" 
+                            src="https://www.youtube.com/embed/NJ_WF3cV4i0" 
+                            title="YouTube video player" frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write;
+                            encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+                        </iframe>
+                </div>
+            </div>
+        </div>
+        <div class="row  justify-content-center">
+            <div class="col-md-5" >
+                <h1 class="nosotros-titulos">Objetivos</h1>
+                <ul class="nosotros-texto">
+                    <li>Proporcionar productos para jardinería de alta calidad.</li>
+                    <li>Generar ingresos para apoyar a la fundación sin fines de lucro.</li>
+                    <li>Brindar un servicio de venta y despacho eficiente y confiable.</li>
+                    <li>Aumentar la visibilidad y el alcance de la organización a través de una aplicación web.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+   
+
+
+    
+    <!--Librerias boopstrap-->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-KJ3o1DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U01d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
+    
+</body>
+</html>
+{% endblock %}
